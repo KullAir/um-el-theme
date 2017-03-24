@@ -1,0 +1,19 @@
+
+
+.single, .archive, .error404 .category { 
+    &.no-sidebar:not(.search-results)
+    {
+       
+       article:not(.type-page){
+         .entry-footer{
+          margin:0;
+          padding-right:6%;
+          padding-left:6%;
+            width:100%;
+          
+         }
+         
+       }
+       
+    }
+  }

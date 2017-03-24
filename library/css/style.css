@@ -1,0 +1,1385 @@
+@charset "UTF-8";
+/*! Made with Bones: http://themble.com/bones :) */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Main Stylesheet
+
+Here's where the magic happens. Here, you'll see we are calling in
+the separate media queries. The base mobile goes outside any query
+and is called at the beginning, after that we call the rest
+of the styles inside media queries.
+
+Helpful articles on Sass file organization:
+http://thesassway.com/advanced/modular-css-naming-conventions
+
+******************************************************************/
+/* normalize.css 2012-07-07T09:50 UTC - http://github.com/necolas/normalize.css */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background: transparent; }
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2.5em;
+  margin: 0.5em 0; }
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b,
+strong,
+.strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn,
+em,
+.em {
+  font-style: italic; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/*
+ * proper formatting (http://blog.fontdeck.com/post/9037028497/hyphens)
+*/
+p {
+  -webkit-hyphens: auto;
+  -epub-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto; }
+
+/*
+ * Addresses margins set differently in IE6/7.
+ */
+pre {
+  margin: 0; }
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre-wrap; }
+
+/**
+ * Set consistent quote types.
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+small, .small {
+  font-size: 75%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+  Lists
+========================================================================== */
+/*
+ * Addresses margins set differently in IE6/7.
+ */
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0; }
+
+dd {
+  margin: 0; }
+
+/*
+ * Addresses paddings set differently in IE6/7.
+ */
+menu {
+  padding: 0 0 0 40px; }
+
+ol,
+ul {
+  padding: 0;
+  list-style-type: none; }
+
+/*
+ * Corrects list images handled incorrectly in IE7.
+ */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none; }
+
+/* ==========================================================================
+  Embedded content
+========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.image-replacement,
+.ir {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+.clearfix, .cf {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after, .cf:before, .cf:after {
+    content: "";
+    display: table; }
+  .clearfix:after, .cf:after {
+    clear: both; }
+
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+span.amp {
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-style: italic; }
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+/***********************************
+  vertical align
+*************************************/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Grid Stylesheet
+
+I've seperated the grid so you can swap it out easily. It's
+called at the top the style.scss stylesheet.
+
+There are a ton of grid solutions out there. You should definitely
+experiment with your own. Here are some recommendations:
+
+http://gridsetapp.com - Love this site. Responsive Grids made easy.
+http://susy.oddbird.net/ - Grids using Compass. Very elegant.
+http://gridpak.com/ - Create your own responsive grid.
+https://github.com/dope/lemonade - Neat lightweight grid.
+
+
+The grid below is a custom built thingy I modeled a bit after
+Gridset. It's VERY basic and probably shouldn't be used on
+your client projects. The idea is you learn how to roll your
+own grids. It's better in the long run and allows you full control
+over your project's layout.
+
+******************************************************************/
+.last-col {
+  float: right;
+  padding-right: 0 !important; }
+
+/*
+
+/*
+Mobile Grid Styles
+These are the widths for the mobile grid.
+There are four types, but you can add or customize
+them however you see fit.
+*/
+@media (max-width: 767px) {
+  .m-all {
+    float: left;
+    padding-right: 2em;
+    width: 100%;
+    padding-right: 0; }
+
+  .m-1of2 {
+    float: left;
+    padding-right: 2em;
+    width: 50%; }
+
+  .m-1of3 {
+    float: left;
+    padding-right: 2em;
+    width: 33.33%; }
+
+  .m-2of3 {
+    float: left;
+    padding-right: 2em;
+    width: 66.66%; }
+
+  .m-1of4 {
+    float: left;
+    padding-right: 2em;
+    width: 25%; }
+
+  .m-3of4 {
+    float: left;
+    padding-right: 2em;
+    width: 75%; }
+
+  .rtl .m-1of2, .rtl .m-1of3, .rtl .m-2of3, .rtl .m-1of4, .rtl .m-3of4 {
+    float: right;
+    padding-right: 0;
+    padding-left: 2em; }
+  .rtl .m-all {
+    float: right;
+    padding-right: 0;
+    padding-left: 0; } }
+/* Portrait tablet to landscape */
+@media (min-width: 768px) and (max-width: 1029px) {
+  .t-all {
+    float: left;
+    padding-right: 2em;
+    width: 100%;
+    padding-right: 0; }
+
+  .t-1of2 {
+    float: left;
+    padding-right: 2em;
+    width: 50%; }
+
+  .t-1of3 {
+    float: left;
+    padding-right: 2em;
+    width: 33.33%; }
+
+  .t-2of3 {
+    float: left;
+    padding-right: 2em;
+    width: 66.66%; }
+
+  .t-1of4 {
+    float: left;
+    padding-right: 2em;
+    width: 25%; }
+
+  .t-3of4 {
+    float: left;
+    padding-right: 2em;
+    width: 75%; }
+
+  .t-1of5 {
+    float: left;
+    padding-right: 2em;
+    width: 20%; }
+
+  .t-2of5 {
+    float: left;
+    padding-right: 2em;
+    width: 40%; }
+
+  .t-3of5 {
+    float: left;
+    padding-right: 2em;
+    width: 60%; }
+
+  .t-4of5 {
+    float: left;
+    padding-right: 2em;
+    width: 80%; }
+
+  .rtl .t-1of2, .rtl .t-1of3, .rtl .t-2of3, .rtl .t-1of4, .rtl .t-3of4, .rtl .t-1of5, .rtl .t-2of5, .rtl .t-3of5, .rtl .t-4of5 {
+    float: right;
+    padding-right: 0;
+    padding-left: 2em; }
+  .rtl .t-all {
+    float: right;
+    padding-right: 0;
+    padding-left: 0; } }
+/* Landscape to small desktop */
+@media (min-width: 1030px) {
+  .d-all {
+    float: left;
+    padding-right: 2em;
+    width: 100%;
+    padding-right: 0; }
+
+  .d-1of2 {
+    float: left;
+    padding-right: 2em;
+    width: 50%; }
+
+  .d-1of3 {
+    float: left;
+    padding-right: 2em;
+    width: 33.33%; }
+
+  .d-2of3 {
+    float: left;
+    padding-right: 2em;
+    width: 66.66%; }
+
+  .d-1of4 {
+    float: left;
+    padding-right: 2em;
+    width: 25%; }
+
+  .d-3of4 {
+    float: left;
+    padding-right: 2em;
+    width: 75%; }
+
+  .d-1of5 {
+    float: left;
+    padding-right: 2em;
+    width: 20%; }
+
+  .d-2of5 {
+    float: left;
+    padding-right: 2em;
+    width: 40%; }
+
+  .d-3of5 {
+    float: left;
+    padding-right: 2em;
+    width: 60%; }
+
+  .d-4of5 {
+    float: left;
+    padding-right: 2em;
+    width: 80%; }
+
+  .d-1of6 {
+    float: left;
+    padding-right: 2em;
+    width: 16.6666666667%; }
+
+  .d-1of7 {
+    float: left;
+    padding-right: 2em;
+    width: 14.2857142857%; }
+
+  .d-2of7 {
+    float: left;
+    padding-right: 2em;
+    width: 28.5714286%; }
+
+  .d-3of7 {
+    float: left;
+    padding-right: 2em;
+    width: 42.8571429%; }
+
+  .d-4of7 {
+    float: left;
+    padding-right: 2em;
+    width: 57.1428572%; }
+
+  .d-5of7 {
+    float: left;
+    padding-right: 2em;
+    width: 71.4285715%; }
+
+  .d-6of7 {
+    float: left;
+    padding-right: 2em;
+    width: 85.7142857%; }
+
+  .d-1of8 {
+    float: left;
+    padding-right: 2em;
+    width: 12.5%; }
+
+  .d-1of9 {
+    float: left;
+    padding-right: 2em;
+    width: 11.1111111111%; }
+
+  .d-1of10 {
+    float: left;
+    padding-right: 2em;
+    width: 10%; }
+
+  .d-1of11 {
+    float: left;
+    padding-right: 2em;
+    width: 9.09090909091%; }
+
+  .d-1of12 {
+    float: left;
+    padding-right: 2em;
+    width: 8.33%; }
+
+  .rtl .d-1of2, .rtl .d-1of3, .rtl .d-2of3, .rtl .d-1of4, .rtl .d-3of4, .rtl .d-1of5,
+  .rtl .d-2of5, .rtl .d-3of5, .rtl .d-4of5, .rtl .d-1of6, .rtl .d-1of7, .rtl .d-2of7, .rtl .d-3of7, .rtl .d-4of7,
+  .rtl .d-5of7, .rtl .d-6of7, .rtl .d-1of8, .rtl .d-1of9, .rtl .d-1of10, .rtl .d-1of11, .rtl .d-1of12 {
+    float: right;
+    padding-right: 0;
+    padding-left: 2em; }
+  .rtl .d-all {
+    float: right;
+    padding-right: 0;
+    padding-left: 0; } }
+.rtl .last-col {
+  float: left;
+  padding-left: 0 !important; }
+
+/*********************
+BASE (MOBILE) SIZE
+This are the mobile styles. It's what people see on their phones. If
+you set a great foundation, you won't need to add too many styles in
+the other stylesheets. Remember, keep it light: Speed is Important.
+*********************/
+body {
+  color: #474749;
+  font-family: Arial,"Helvetica Neue",Helvetica,sans-serif; }
+
+/* visible only to screen reader */
+.hidden {
+  position: absolute;
+  text-ident: 100%;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  padding: 0 !important;
+  margin: 0 !important; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Montserrat, "Helvetica Neue", sans-serif;
+  font-weight: 400; }
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    font-weight: 400; }
+
+button {
+  background: #073860; }
+
+.site {
+  background-color: #D3D3D3; }
+
+.site-inner {
+  max-width: 1200px;
+  background-color: #fff; }
+
+#masthead {
+  padding-top: 0px !important;
+  padding-bottom: 12px !important; }
+
+aside .widget {
+  border-top: none; }
+  aside .widget:not(.widget_search):not(.widget_nav_menu):before, aside .widget .post-in-list:before {
+    content: '';
+    height: 16px;
+    position: relative;
+    display: block;
+    background-color: #d3d3d3;
+    width: 100%;
+    top: 21px;
+    left: 0;
+    right: 0; }
+  aside .widget h2.widget-title {
+    position: relative;
+    margin: 0;
+    font-size: 150%;
+    line-height: 1.1em;
+    display: inline-block;
+    z-index: 2;
+    background: #fff;
+    display: inline-block;
+    color: #073860;
+    padding-right: 0.25em; }
+
+.kullgrid-span {
+  padding-top: 2em; }
+  .kullgrid-span .recent-posts_li {
+    margin-top: 20px; }
+  .kullgrid-span .kullgrid-title-box:before {
+    content: '';
+    height: 16px;
+    position: relative;
+    display: block;
+    background-color: #d3d3d3;
+    width: 100%;
+    top: 1.5em;
+    left: 0;
+    right: 0; }
+  .kullgrid-span .kullgrid-title-box h2 {
+    position: relative;
+    margin: 0;
+    font-size: 150%;
+    line-height: 1.1em;
+    display: inline-block;
+    z-index: 2;
+    background: #fff;
+    display: inline-block;
+    color: #073860;
+    padding-right: 0.25em; }
+  .kullgrid-span .featured-thumbnail {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 20px; }
+  .kullgrid-span h3 {
+    clear: none;
+    font-size: 130%;
+    font-weight: 300 !important;
+    line-height: 1em;
+    margin: 2px 0; }
+  .kullgrid-span .meta {
+    margin-bottom: 9px;
+    color: #073860;
+    text-transform: none;
+    font-size: 12px;
+    font-weight: 700;
+    display: block;
+    overflow: hidden; }
+  .kullgrid-span .excerpt {
+    margin-bottom: 1.2em;
+    display: block;
+    line-height: 1.4em !important; }
+  .kullgrid-span .clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0; }
+
+.kull_tinygrid .clear {
+  clear: none; }
+.kull_tinygrid .post_meta {
+  padding: 0 !important;
+  margin-bottom: 9px !important;
+  color: #073860;
+  text-transform: none;
+  font-size: 12px;
+  font-weight: 700;
+  overflow: hidden; }
+.kull_tinygrid .excerpt {
+  font-weight: 300;
+  line-height: 1.4em !important; }
+
+/************************************************
+                    homepage
+************************************************/
+.home .content-area div.section, .home .content-area section {
+  background-color: #fff; }
+.home .content-area div.grey {
+  background-color: #EBEBEB; }
+.home .content-area div.yellow {
+  background-color: #F1D432; }
+
+#post-images .post-thumb-grid {
+  width: 100%; }
+  #post-images .post-thumb-grid .image_container a {
+    display: block;
+    border: 4px solid #fff; }
+    #post-images .post-thumb-grid .image_container a:focus, #post-images .post-thumb-grid .image_container a:hover {
+      border: 4px solid #920000; }
+    #post-images .post-thumb-grid .image_container a img {
+      width: 100%; }
+  #post-images .post-thumb-grid .front_holder .front_holder_inner {
+    float: left;
+    width: 100%;
+    height: 0;
+    position: relative; }
+    #post-images .post-thumb-grid .front_holder .front_holder_inner h3 {
+      padding: 0 20px;
+      position: absolute;
+      bottom: 40px; }
+      #post-images .post-thumb-grid .front_holder .front_holder_inner h3 a {
+        font-weight: bold;
+        font-size: 150%;
+        color: #fff;
+        line-height: 100%; }
+    #post-images .post-thumb-grid .front_holder .front_holder_inner .post_meta {
+      padding: 0 20px;
+      color: #fff;
+      position: absolute;
+      bottom: 80px; }
+
+ /************************************************
+              Accesibbilty Menu
+************************************************/
+#colorAndFontsButtons h5 {
+  font-size: 150%; }
+#colorAndFontsButtons fieldset {
+  line-height: 1em;
+  border: none; }
+  #colorAndFontsButtons fieldset h6.legend {
+    font-size: 100%; }
+
+/*******************************
+ *       Header 
+ ******************************/
+#masthead {
+  padding-right: 0 !important;
+  padding-left: 0  !important;
+  padding-bottom: 0  !important; }
+  #masthead .site-header-main {
+    padding-right: 4%;
+    padding-left: 4%;
+    background: #262626; }
+    #masthead .site-header-main .menu-toggle {
+      color: #fff; }
+    #masthead .site-header-main .site-title a, #masthead .site-header-main .site-description {
+      color: #fff; }
+  #masthead .site-header-menu {
+    background-color: #073860; }
+    #masthead .site-header-menu nav.main-navigation {
+      background: #073860; }
+      #masthead .site-header-menu nav.main-navigation a {
+        color: #fff; }
+
+#topbar-widget-area {
+  float: left; }
+  #topbar-widget-area .top-widget-container {
+    float: left;
+    padding: 0 0 0 15px; }
+  #topbar-widget-area .widget_search {
+    padding-top: 9px; }
+    #topbar-widget-area .widget_search h3 {
+      display: block;
+      position: absolute;
+      text-ident: 100%;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      padding: 0 !important;
+      margin: 0 !important; }
+    #topbar-widget-area .widget_search input[type="search"] {
+      padding: 0.4em; }
+  #topbar-widget-area .widget_polylang ul {
+    margin: 0.4em 0; }
+  #topbar-widget-area #lang_sel_list ul {
+    border-top: none !important; }
+  #topbar-widget-area #lang_sel_list a, #topbar-widget-area #lang_sel_list a:visited {
+    font-size: 18px;
+    border-color: #073860 !important; }
+
+/********************************
+ *      side bar
+ *****************************/
+aside .widget_nav_menu li {
+  color: #ffffff;
+  background-color: #073860 !important; }
+
+aside .widget_nav_menu ul.menu {
+  margin-right: 0;
+  margin-left: 0; }
+  aside .widget_nav_menu ul.menu li {
+    padding: 5% 5%;
+    border-bottom: 1px solid #f2f2f2; }
+    aside .widget_nav_menu ul.menu li a {
+      font-size: 130% !important;
+      color: #ffffff !important;
+      display: inline-block; }
+      aside .widget_nav_menu ul.menu li a:hover, aside .widget_nav_menu ul.menu li a:focus {
+        color: #f1d432 !important;
+        display: inline-block;
+        -moz-box-shadow: 0 2px  #f1d432;
+        -webkit-box-shadow: 0 2px  #f1d432;
+        box-shadow: 0 2px  #f1d432; }
+  aside .widget_nav_menu ul.menu li.current-menu-item {
+    font-weight: bold; }
+
+/********************************
+ *        top-widget area
+ *******************************/
+.widget_polylang ul {
+  list-style-type: none; }
+  .widget_polylang ul li {
+    display: inline-block; }
+    .widget_polylang ul li a {
+      color: #ffffff; }
+  .widget_polylang ul li.current-lang a {
+    color: #f1d432;
+    display: inline-block;
+    padding: 0 0.5em; }
+    .widget_polylang ul li.current-lang a:hover, .widget_polylang ul li.current-lang a:focus {
+      text-decoration: underline; }
+
+/********************************
+ *        pages
+ *******************************/
+.home .site-main {
+  margin-bottom: 0; }
+
+#reply-title {
+  border-top: none; }
+
+.site-content ol {
+  list-style: decimal;
+  margin-left: 1.5em; }
+.site-content ul {
+  list-style: disc;
+  margin-left: 1.5em; }
+
+.archive header.page-header, .category header.page-header {
+  width: 100%;
+  background: #F1D432;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-align: center;
+  margin-bottom: 1.2em;
+  margin-left: 0;
+  margin-right: 0;
+  border-top: none; }
+  .archive header.page-header .page-title, .category header.page-header .page-title {
+    margin: 1em auto;
+    line-height: 1.5em;
+    color: #000;
+    width: 50%;
+    font-weight: normal;
+    font-size: 250%;
+    font-size: 2.5rem;
+    border-bottom: 2px solid #000; }
+
+.page header.entry-header, .single header.entry-header {
+  width: 100%;
+  background: #F1D432;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  text-align: center;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  border-top: none; }
+  .page header.entry-header .entry-title, .single header.entry-header .entry-title {
+    margin: 1em auto;
+    line-height: 1.5em;
+    color: #000;
+    width: 50%;
+    font-weight: normal;
+    border-bottom: 2px solid #000; }
+.page .site-content .content-area .entry-footer a, .single .site-content .content-area .entry-footer a {
+  color: #073860;
+  text-transform: none;
+  font-size: 0.8125rem;
+  font-weight: 700; }
+
+ul.subpages {
+  list-style: none; }
+  ul.subpages li.post-in-list {
+    margin-bottom: 2em; }
+    ul.subpages li.post-in-list .entry-title {
+      margin-bottom: 0; }
+
+.archive .entry-header, .category .entry-header {
+  margin-bottom: 1em; }
+  .archive .entry-header:after, .category .entry-header:after {
+    content: '';
+    height: 16px;
+    position: relative;
+    display: block;
+    background-color: #d3d3d3;
+    width: 100%;
+    bottom: 21px;
+    left: 0;
+    right: 0; }
+.archive h2, .category h2 {
+  position: relative;
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1.1em;
+  display: inline-block;
+  z-index: 2;
+  background: #fff;
+  display: inline-block;
+  color: #073860;
+  padding-right: 0.25em; }
+  .archive h2 a, .category h2 a {
+    color: #073860; }
+.archive article:not(.type-page) .entry-summary, .category article:not(.type-page) .entry-summary {
+  font-size: 1rem; }
+.archive article:not(.type-page) .entry-footer a, .category article:not(.type-page) .entry-footer a {
+  color: #073860;
+  text-transform: none;
+  font-size: 0.8125rem;
+  font-weight: 700; }
+
+/********************
+ *  team page 
+ *******************/
+ul.staff-grid {
+  list-style: none; }
+
+.staff-grid-item {
+  margin: 1em 0;
+  ┬áopacity: 0;
+  ┬á┬á┬á┬á-webkit-transition: opacity .5s linear;
+  ┬á┬á┬á┬átransition: opacity .5s linear; }
+  .staff-grid-item figure img {
+    /*
+    position: absolute;
+    top: 50%;
+      -webkit-transform: translateY(-50%);
+     -ms-transform: translateY(-50%);
+     transform: translateY(-50%); 
+      */ }
+  .staff-grid-item figure .team_frame {
+    background: yellow; }
+    .staff-grid-item figure .team_frame a {
+      display: block;
+      max-height: 400px;
+      overflow: hidden; }
+  .staff-grid-item figure .meta {
+    display: inline-block;
+    height: 2em;
+    overflow: hidden;
+    color: #073860;
+    text-transform: none;
+    font-size: 12px;
+    font-weight: 700; }
+  .staff-grid-item figure .excerpt {
+    margin-bottom: 1.2em;
+    display: block;
+    height: 4em;
+    overflow: hidden;
+    line-height: 1.4em !important; }
+
+/********************************
+ *        footer
+ *******************************/
+/********************************
+ *        slider
+ *******************************/
+#main-slider {
+  border: 5px solid #fff; }
+  #main-slider .slick-slide {
+    height: 280px;
+    /*
+     .front_holder{
+        height:100%;
+        width:100%;
+         
+        .front_holder_inner{  
+          text-align:center;      
+          color:white;
+          padding: 1em 3em;;
+          background: transparentize($black, 0.25);
+          @include vertical-align();
+          width:60%;
+          margin:0 auto;
+          z-index:10;
+          
+          h3{
+          
+            color:$white; 
+            margin-bottom:0;
+          }
+          
+          p{
+            
+            max-height:5em;
+            overflow:hidden;
+          }
+          
+        }
+
+    }*/ }
+    #main-slider .slick-slide .image_container {
+      position: relative;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      height: 100%;
+      width: 100%; }
+      #main-slider .slick-slide .image_container img {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%); }
+  #main-slider .slick-prev,
+  #main-slider .slick-next {
+    z-index: 15; }
+  #main-slider button,
+  #main-slider button:active,
+  #main-slider button:active:focus,
+  #main-slider button:focus {
+    outline: 0 !important;
+    outline-offset: 0  !important;
+    background-image: none  !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none  !important; }
+
+.rtl.archive h2, .rtl.category h2 {
+  padding-right: 0 !important;
+  padding-left: 0.25em !important; }
+.rtl .kullgrid-span .kullgrid-title-box h2 {
+  padding-right: 0em;
+  padding-left: 0.25em; }
+.rtl .kullgrid-span .featured-thumbnail {
+  float: right;
+  margin-left: 10px;
+  margin-right: 0; }
+.rtl #post-images .front_holder .front_holder_inner {
+  floar: right; }
+.rtl .site-content ol {
+  margin-right: 1.5em; }
+.rtl .site-content ul {
+  margin-right: 1.5em; }
+.rtl .widget_nav_menu .current-menu-item > a:after {
+  content: "" !important;
+  margin-left: 0;
+  margin-right: 0.45em; }
+
+/*********************
+LARGER MOBILE DEVICES
+This is for devices like the Galaxy Note or something that's
+larger than an iPhone but smaller than a tablet. Let's call them
+tweeners.
+*********************/
+/*********************
+TABLET & SMALLER LAPTOPS
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*********************/
+@media only screen and (min-width: 44.375em) {
+  body:not(.custom-background-image).admin-bar:before, body:not(.custom-background-image):before {
+    top: 0px !important;
+    height: 0; }
+
+  .site {
+    margin: 0px; }
+
+  #masthead .site-header-main {
+    padding-right: 4%;
+    padding-left: 4%; }
+  #masthead .site-header-menu {
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 3em; }
+    #masthead .site-header-menu nav.main-navigation {
+      float: right;
+      padding-right: 4%;
+      padding-left: 4%; }
+
+  /************************************************
+                      homepage
+  ************************************************/
+  .home .content-area {
+    width: 100%; }
+    .home .content-area section, .home .content-area .section {
+      padding: 2em 1em; }
+
+  #post-images .post-thumb-grid {
+    width: 32%;
+    margin-bottom: 0;
+    float: left; }
+    #post-images .post-thumb-grid:nth-child(n) {
+      margin-bottom: 2%;
+      margin-right: 2%; }
+    #post-images .post-thumb-grid:nth-child(3n) {
+      margin-right: 0;
+      margin-bottom: 0; }
+
+  .site-header .site-branding {
+    width: 100%;
+    margin-right: 0; }
+
+  /************************************************
+                     pages
+  ************************************************/
+  .site-content {
+    padding: 0; }
+
+  .page .site-content .content-area header.entry-header, .single .site-content .content-area header.entry-header {
+    float: left;
+    text-align: center;
+    margin-bottom: 1em; }
+    .page .site-content .content-area header.entry-header .entry-title, .single .site-content .content-area header.entry-header .entry-title {
+      margin: 0.5em auto;
+      line-height: 1.5em;
+      width: 50%; }
+  .page .site-content .content-area .entry-content, .single .site-content .content-area .entry-content {
+    margin-bottom: 1em; }
+
+  .single.no-sidebar:not(.search-results) article .entry-header, .archive.no-sidebar:not(.search-results) article .entry-header, .error404 .category.no-sidebar:not(.search-results) article .entry-header {
+    margin-right: 6%;
+    margin-left: 6%;
+    padding-right: 0;
+    padding-left: 0; }
+  .single.no-sidebar:not(.search-results) article .entry-title, .archive.no-sidebar:not(.search-results) article .entry-title, .error404 .category.no-sidebar:not(.search-results) article .entry-title {
+    margin-right: 0;
+    margin-left: 0; }
+  .single.no-sidebar:not(.search-results) .entry-content, .single.no-sidebar:not(.search-results) .entry-footer, .archive.no-sidebar:not(.search-results) .entry-content, .archive.no-sidebar:not(.search-results) .entry-footer, .error404 .category.no-sidebar:not(.search-results) .entry-content, .error404 .category.no-sidebar:not(.search-results) .entry-footer {
+    margin: 0 0 1em;
+    padding-right: 6%;
+    padding-left: 6%;
+    width: 100%; }
+
+  /************************************************
+   *   category 
+   ***********************************************/
+  /************************************************
+                    post
+  ************************************************/
+  /********************************
+   *        slider
+   *******************************/
+  #main-slider .slick-slide {
+    height: 400px; }
+
+  .rtl #post-images .post-thumb-grid {
+    margin-left: 2%;
+    margin-right: 0;
+    float: right; } }
+@media only screen and (min-width: 56.875em) {
+  .main-navigation {
+    margin: 0; }
+    .main-navigation ul ul li {
+      background-color: #073860;
+      border: 1px solid #F1D432; }
+
+  .page .site-content .content-area .entry-content {
+    padding-left: 6%; }
+  .page .site-content .sidebar {
+    margin-left: 72%;
+    margin-right: 72%; }
+
+  .single .content-area .post-thumbnail, .single .content-area .entry-content, .single .content-area .entry-footer, .single .content-area .comments-area, .single .content-area .post-navigation, .archive .content-area .post-thumbnail, .archive .content-area .entry-content, .archive .content-area .entry-footer, .archive .content-area .comments-area, .archive .content-area .post-navigation, .error404 .category .content-area .post-thumbnail, .error404 .category .content-area .entry-content, .error404 .category .content-area .entry-footer, .error404 .category .content-area .comments-area, .error404 .category .content-area .post-navigation {
+    padding-left: 6%; }
+  .single .sidebar, .archive .sidebar, .error404 .category .sidebar {
+    margin-left: 72%;
+    margin-right: 72%; }
+
+  aside .widget {
+    padding-top: 0; }
+
+  .single.no-sidebar:not(.search-results) .entry-footer, .archive.no-sidebar:not(.search-results) .entry-footer, .error404 .category.no-sidebar:not(.search-results) .entry-footer {
+    margin: 0;
+    padding-right: 6%;
+    padding-left: 6%; }
+
+  .rtl .main-navigation .primary-menu > li {
+    float: right; }
+  .rtl .single .site-content .content-area .entry-content, .rtl .single .site-content .content-area .entry-footer, .rtl .single .site-content .content-area .comments-area, .rtl .single .site-content .content-area .post-navigation, .rtl .page .site-content .content-area .entry-content, .rtl .page .site-content .content-area .entry-footer, .rtl .page .site-content .content-area .comments-area, .rtl .page .site-content .content-area .post-navigation, .rtl .archive .site-content .content-area .entry-content, .rtl .archive .site-content .content-area .entry-footer, .rtl .archive .site-content .content-area .comments-area, .rtl .archive .site-content .content-area .post-navigation, .rtl .error404 .site-content .content-area .entry-content, .rtl .error404 .site-content .content-area .entry-footer, .rtl .error404 .site-content .content-area .comments-area, .rtl .error404 .site-content .content-area .post-navigation {
+    padding-right: 6%;
+    padding-left: 0; }
+  .rtl .single .site-content .content-area .post-thumbnail, .rtl .page .site-content .content-area .post-thumbnail, .rtl .archive .site-content .content-area .post-thumbnail, .rtl .error404 .site-content .content-area .post-thumbnail {
+    padding-right: 6%;
+    padding-left: 6%; }
+  .rtl .single .site-content .sidebar, .rtl .page .site-content .sidebar, .rtl .archive .site-content .sidebar, .rtl .error404 .site-content .sidebar {
+    margin-right: 72%;
+    margin-left: 72%; }
+  .rtl .single:not(.no-sidebar) .entry-content, .rtl .single:not(.no-sidebar) .entry-footer, .rtl .single:not(.no-sidebar) .comments-area, .rtl .single:not(.no-sidebar) .post-navigation, .rtl .page:not(.no-sidebar) .entry-content, .rtl .page:not(.no-sidebar) .entry-footer, .rtl .page:not(.no-sidebar) .comments-area, .rtl .page:not(.no-sidebar) .post-navigation, .rtl .archive:not(.no-sidebar) .entry-content, .rtl .archive:not(.no-sidebar) .entry-footer, .rtl .archive:not(.no-sidebar) .comments-area, .rtl .archive:not(.no-sidebar) .post-navigation, .rtl .error404:not(.no-sidebar) .entry-content, .rtl .error404:not(.no-sidebar) .entry-footer, .rtl .error404:not(.no-sidebar) .comments-area, .rtl .error404:not(.no-sidebar) .post-navigation {
+    padding-right: 6%;
+    padding-left: 0; }
+  .rtl .single:not(.no-sidebar) .post-thumbnail, .rtl .page:not(.no-sidebar) .post-thumbnail, .rtl .archive:not(.no-sidebar) .post-thumbnail, .rtl .error404:not(.no-sidebar) .post-thumbnail {
+    padding-right: 6%;
+    padding-left: 6%; }
+  .rtl .single:not(.no-sidebar) .sidebar, .rtl .page:not(.no-sidebar) .sidebar, .rtl .archive:not(.no-sidebar) .sidebar, .rtl .error404:not(.no-sidebar) .sidebar {
+    margin-right: 72%; }
+  .rtl .entry-header:not(.no-sidebar), .rtl .post-thumbnail:not(.no-sidebar), .rtl .entry-content:not(.no-sidebar), .rtl .entry-summary:not(.no-sidebar), .rtl .entry-footer:not(.no-sidebar), .rtl .comments-area:not(.no-sidebar), .rtl .image-navigation:not(.no-sidebar), .rtl .post-navigation:not(.no-sidebar), .rtl .pagination:not(.no-sidebar), .rtl .page-header:not(.no-sidebar), .rtl .page-content:not(.no-sidebar), .rtl .content-bottom-widgets:not(.no-sidebar) {
+    padding-right: 6%;
+    padding-left: 0; }
+  .rtl.single.no-sidebar:not(.search-results) .entry-content, .rtl.archive.no-sidebar:not(.search-results) .entry-content, .rtl.error404 .rtl.category.no-sidebar:not(.search-results) .entry-content {
+    margin: 0;
+    margin-bottom: 1em;
+    padding-right: 6%;
+    padding-left: 6%;
+    width: 100%; } }
+/*********************
+DESKTOP
+This is the average viewing window. So Desktops, Laptops, and
+in general anyone not viewing on a mobile device. Here's where
+you can add resource intensive styles.
+*********************/
+@media screen and (min-width: 61.5625em) {
+  .single.no-sidebar:not(.search-results) article:not(.type-page) .entry-footer, .archive.no-sidebar:not(.search-results) article:not(.type-page) .entry-footer, .error404 .category.no-sidebar:not(.search-results) article:not(.type-page) .entry-footer {
+    margin: 0;
+    padding-right: 6%;
+    padding-left: 6%;
+    width: 100%; } }
+/*********************
+LARGE VIEWING SIZE
+This is for the larger monitors and possibly full screen viewers.
+*********************/
+/************/
+
+/*# sourceMappingURL=style.css.map */
